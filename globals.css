@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 50% 93%;
+    --foreground: 337 90% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 337 90% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 337 90% 10%;
+    --primary: 337 90% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 340 30% 85%;
+    --secondary-foreground: 337 90% 20%;
+    --muted: 340 20% 88%;
+    --muted-foreground: 337 40% 40%;
+    --accent: 312 100% 50%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 337 40% 85%;
+    --input: 337 40% 85%;
+    --ring: 337 90% 50%;
+    --radius: 1rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.tinder-gradient {
+  background: linear-gradient(135deg, #F20F67 0%, #FF00CC 100%);
+}
+
+.tinder-gradient-bg {
+  background: linear-gradient(180deg, rgba(242, 15, 103, 0.05) 0%, rgba(255, 0, 204, 0.05) 100%);
+}
+
+@keyframes splash-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.animate-splash-pulse {
+  animation: splash-pulse 2s ease-in-out infinite;
+}

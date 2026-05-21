@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "user1",
+      "description": "Young woman in a saree",
+      "imageUrl": "https://picsum.photos/seed/dating1/600/800",
+      "imageHint": "indian woman saree"
+    },
+    {
+      "id": "user2",
+      "description": "Young man in a casual shirt",
+      "imageUrl": "https://picsum.photos/seed/dating2/600/800",
+      "imageHint": "indian man casual"
+    },
+    {
+      "id": "user3",
+      "description": "Woman laughing outdoors",
+      "imageUrl": "https://picsum.photos/seed/dating3/600/800",
+      "imageHint": "happy woman portrait"
+    },
+    {
+      "id": "user4",
+      "description": "Man looking stylish at a cafe",
+      "imageUrl": "https://picsum.photos/seed/dating4/600/800",
+      "imageHint": "stylish man cafe"
+    },
+    {
+      "id": "user5",
+      "description": "Young woman with traditional jewelry",
+      "imageUrl": "https://picsum.photos/seed/dating5/600/800",
+      "imageHint": "indian woman traditional"
+    }
+  ]
+}

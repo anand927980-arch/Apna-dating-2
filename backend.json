@@ -1,0 +1,69 @@
+
+{
+  "entities": {
+    "UserProfile": {
+      "title": "User Profile",
+      "description": "Comprehensive information about a user on Apna Partner.",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "age": { "type": "number" },
+        "gender": { "type": "string", "enum": ["Male", "Female", "Non-binary"] },
+        "district": { "type": "string" },
+        "bio": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "interests": { "type": "array", "items": { "type": "string" } },
+        "isPremium": { "type": "boolean" },
+        "latitude": { "type": "number" },
+        "longitude": { "type": "number" },
+        "updatedAt": { "type": "string", "format": "date-time" },
+        "jobTitle": { "type": "string" },
+        "education": { "type": "string" }
+      },
+      "required": ["name", "age", "district", "bio"]
+    },
+    "Message": {
+      "title": "Chat Message",
+      "description": "A message sent between two users.",
+      "type": "object",
+      "properties": {
+        "senderId": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" }
+      },
+      "required": ["senderId", "text", "timestamp"]
+    },
+    "Match": {
+      "title": "Match",
+      "description": "Represents a successful match between two users.",
+      "type": "object",
+      "properties": {
+        "users": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string", "format": "date-time" },
+        "lastMessage": { "type": "string" },
+        "lastMessageTime": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["password", "phone", "google.com"]
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/backend/entities/UserProfile" },
+      "description": "Stores user profile data."
+    },
+    "/matches/{matchId}": {
+      "schema": { "$ref": "#/backend/entities/Match" },
+      "description": "Groups users who have matched."
+    },
+    "/matches/{matchId}/messages/{messageId}": {
+      "schema": { "$ref": "#/backend/entities/Message" },
+      "description": "Messages within a specific match."
+    },
+    "/users/{userId}/likes/{targetUserId}": {
+      "schema": "object",
+      "description": "Tracks which users the current user has liked."
+    }
+  }
+}

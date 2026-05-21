@@ -1,0 +1,9 @@
+
+# Settings to manage and configure a Firebase App Hosting backend.
+runConfig:
+  maxInstances: 2
+  memory: 512MiB
+  cpu: 1
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: apna-partner-ba818
